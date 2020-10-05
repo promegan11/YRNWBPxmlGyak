@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE film SYSTEM "mozi1.dtd" >
+<film id="">
+  <rendezo id="" nev="">rendezo</rendezo>
+  <szinesz id="" nev="">szinesz</szinesz>
+  <iro id="">iro</iro>
+</film>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="mozi1">
+  <xs:complexType>
+    <xs:sequence> 	
+		      <xs:element name="film" type="filmtype"/>
+		      <xs:element name="rendezo" type="rendezotype" minOccurs="0" maxOccurs="unbounded"/>
+		      <xs:element name="szinesz" type="szinesztype" />
+		      <xs:element name="iro" type="irotype" />    	
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:complexType name="filmtype">
+    <xs:attribute name="id" type="xs:int" use="required"/>
+    <xs:attribute name="mufaj" type="mufajtipus" />
+</xs:complexType>
+
+<xs:complexType name="rendezotype">
+    <xs:attribute name="id" type="xs:int" use="required"/>
+    <xs:attribute name="nev" type="xs:string" />
+</xs:complexType>
+
+<xs:complexType name="szinesztype">
+    <xs:attribute name="id" type="xs:int" use="required"/>
+    <xs:attribute name="nev" type="xs:string" />
+</xs:complexType>
+
+<xs:complexType name="irotype" type="xs:string">
+    <xs:attribute name="id" type="xs:int" use="required"/>
+    
+</xs:complexType>
+
+<xs:simpleType name="mufajtipus">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="horror"/>
+		<xs:enumeration value="sci-fi"/>
+		<xs:enumeration value="akció"/>
+		<xs:enumeration value="vígjáték"/>
+		<xs:enumeration value="mese"/>
+	</xs:restriction>
+</xs:simpleType>
+
+</xs:schema>

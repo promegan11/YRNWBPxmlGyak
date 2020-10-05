@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orarend>
+
+<ora id="1" tipus="előadás">
+	<targy>XML</targy>
+	
+	<idopont>
+		<nap>hétfő</nap>
+		<tol> 9</tol>
+		<ig>11</ig>
+	</idopont>
+	<helyszin>
+	6-os előadó
+	</helyszin>
+	<okato>Dr. Bednarik László</okato>
+	<szak>Programtervező</szak>
+	
+</ora>
+<ora id="2" tipus="gyakorlat">
+	<targy>XML</targy>
+	
+	<idopont>
+		<nap>kedd</nap>
+		<tol> 11</tol>
+		<ig>12</ig>
+	</idopont>
+	<helyszin>
+	36-os előadó
+	</helyszin>
+	<okato>Dr. Bednarik László</okato>
+	<szak>Programtervező</szak>
+	
+</ora>
+<ora id="3" tipus="előadás">
+	<targy>Mesterséges Inteligencia</targy>
+	
+	<idopont>
+		<nap>szerda</nap>
+		<tol> 9</tol>
+		<ig>11</ig>
+	</idopont>
+	<helyszin>
+	1-es előadó
+	</helyszin>
+	<okato>Dr. Dudás László</okato>
+	<szak>Programtervező</szak>
+	
+</ora>
+
+</orarend>

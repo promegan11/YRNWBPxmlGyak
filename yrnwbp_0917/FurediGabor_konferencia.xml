@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <DOCTYPE konferencia SYSTEM "konferencia.dtd">-->
+
+<konferencia>
+	<cím id="tyn_nxm_2jbb" mufaj="Network"/>
+	<hallgatók id="nzk_4xm_2jbb" nev="Egyetem">
+		<hallgató id="hgt_4xm_2jbb">
+			<név id="hnv_4xm_2jbb" />
+			<lakcím id="lkm_4xm_2jbb" />
+		</hallgató>
+	</hallgatók>
+	<helyszín id="u5q_4xm_2jbb" nev="Miskolc"/>
+	<előadó id="trv_4xm_2jbb" >
+		<név id="nv_4xm_2jbb" />
+		<adószám id="asm_4xm_2jbb" />
+		<lakcím id="lcm_4xm_2jbb" />
+	</előadó>
+	<dátum id="pdr_4xm_2jbb" nev="2020"/>
+</konferencia>
