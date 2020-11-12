@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			elementFormDefault="qualified">
+	<xs:element name="nevjegykartyak">	
+		<xs:complexType>
+	    	<xs:sequence>	
+				<xs:element name="nevjegykartya">
+					<xs:complexType>
+			    		<xs:sequence>
+							<xs:element name="nev" type="xs:string"></xs:element>
+							<xs:element name="ceg">
+								<xs:complexType>
+			    					<xs:sequence>
+										<xs:element name="cim" >
+											<xs:complexType>
+			    								<xs:sequence>
+													<xs:element name="iranyitoszam" type="xs:integer"></xs:element>
+													<xs:element name="varos" type="xs:string"></xs:element>
+													<xs:element name="utca" type="xs:string"></xs:element>
+													<xs:element name="hazszam" type="xs:string"></xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="nev" type="xs:string"></xs:element>
+										<xs:element name="telefonszam">
+											<xs:complexType>
+			    								
+			    								<xs:attribute name="korzet" type="telkor" use="required"/>
+			    							</xs:complexType>
+										</xs:element>
+										<xs:element name="weblap" type="xs:string"></xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="beosztas" type="xs:string"></xs:element>
+							<xs:element name="telefonszam" type="telkor"></xs:element>
+							<xs:element name="email" type="xs:string"></xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" type="xs:integer" use="required"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:simpleType name="telkor">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="1s[0-9]" ></xs:pattern>
+			<xs:enumeration value="2"></xs:enumeration>
+			<xs:enumeration value="15"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
