@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="shopadatbazis">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="kosar"/>
+                <xs:element ref="termek"/>
+                <xs:element ref="ugyfel"/>
+                <xs:element ref="rendeles"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- csomopont elemeim -->
+    <xs:element name="rendeles">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="kiszido"/>
+                <xs:element ref="garido"/>
+                <xs:element ref="rendalapot"/>
+            </xs:sequence>
+            <xs:attribute name="megrido" type="xs:date" use="required"/>
+            <xs:attribute name="id" type="azon" use="required"/>
+        </xs:complexType>
+    </xs:element> 
+    <xs:element name="termek">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="nev"/>
+                <xs:element ref="ar"/>
+                <xs:element ref="raktkeszlet"/>
+                <xs:element ref="adatok"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="azon" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="kosar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tel"/>
+                <xs:element ref="termekdarab"/>
+                <xs:element ref="szallitasiido"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="azon" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ugyfel">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="nev"/>
+                <xs:element ref="tel"/>
+                <xs:element ref="email"/>
+                <xs:element ref="cim"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="azon" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- alap elemeim -->
+    <xs:element name="tel" type="xs:integer"/>
+    <xs:element name="email" type="xs:string"/>
+    <xs:element name="varos" type="xs:NCName"/>
+    <xs:element name="utca" type="xs:NCName"/>
+    <xs:element name="hsz" type="xs:integer"/>
+    <xs:element name="garido" type="xs:string"/>
+    <xs:element name="nev" type="xs:string"/>
+    <xs:element name="termekdarab" type="xs:integer"/>
+    <xs:element name="szallitasiido" type="xs:integer"/>
+    <xs:element name="adatok" type="xs:string"/>
+    <xs:element name="ar" type="xs:integer"/>
+    <xs:element name="raktkeszlet" type="xs:integer"/>
+    <xs:element name="kiszido" type="xs:date"/>
+    <xs:element name="rendalapot" type="rendalapot"/>
+    <!-- komplex egyedi tipusaim -->
+    <xs:element name="cim">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="varos"/>
+                <xs:element ref="utca"/>
+                <xs:element ref="hsz"/>
+            </xs:sequence>
+            <xs:attribute name="irszam" type="irszam" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- Simple egyedi tipusaim -->
+    <xs:simpleType name="irszam">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="azon">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{8}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType final="restriction" name="rendalapot">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="beszállítás alatt"/>
+            <xs:enumeration value="kiszállítás alatt"/>
+            <xs:enumeration value="kézbesítve"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
