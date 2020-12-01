@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="XMLSchemaYrnwbp.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<shopadatbazis>
+    
+    <kosar id="1253" >
+        <tel>06306358468</tel>
+        <termekdarab>2</termekdarab>
+        <szallitasiido>1-3 munkanap</szallitasiido>
+    </kosar>
+    <kosar id="1250" >
+        <tel>06706358468</tel>
+        <termekdarab>2</termekdarab>
+        <szallitasiido>1-3 munkanap</szallitasiido>
+    </kosar>
+    <termek id="5263">
+        <nev>AMD Ryzen 3 3100 100000284BOX processzor</nev>
+        <ar>25000</ar>
+        <raktkeszlet>10</raktkeszlet>
+        <adatok>Fogyasztás (W): 65</adatok>
+    </termek>
+    <termek id="5261">
+        <nev>Kingston 2x8GB DDR4 2666MHz HyperX FURY fekete HX426C16FB3K2/16 memória</nev>
+        <ar>32000</ar>
+        <raktkeszlet>4</raktkeszlet>
+        <adatok>Memória típus: DDR4</adatok>
+    </termek>
+    <termek id="5262">
+        <nev>Seagate 2TB BarraCuda 256MB ST2000DM008 merevlemez</nev>
+        <ar>19000</ar>
+        <raktkeszlet>10</raktkeszlet>
+        <adatok>Belső cache (MB): 256</adatok>
+    </termek>
+    <termek id="5260">
+        <nev>Samsung 500GB 970 Evo Plus MZ-V7S500BW M.2 SSD meghajtó</nev>
+        <ar>35000</ar>
+        <raktkeszlet>10</raktkeszlet>
+        <adatok>Formátum: M.2 PCIe</adatok>
+    </termek>
+    <ugyfel id="7952">
+        <nev>Kiss Elemér</nev>
+        <tel>06306358468</tel>
+        <email></email>
+        <cim irszam="3142">
+            <varos>Sopron</varos>
+            <utca>TóthJenő</utca>
+            <hsz>12</hsz>
+        </cim>
+    </ugyfel>
+    <ugyfel id="7950">
+        <nev>Tatár Endre</nev>
+        <tel>06706358468</tel>
+        <email>endre.tatar@gmal.com</email>
+        <cim irszam="3525">
+            <varos>Miskolc</varos>
+            <utca>TóthJenő</utca>
+            <hsz>35</hsz>
+        </cim>
+    </ugyfel>
+    <rendeles megrido="2012-09-24" id="6834">
+        <kiszido>2002-09-24</kiszido>
+        <garido>2</garido>
+        <rendalapot>kiszállítás alatt</rendalapot>
+    </rendeles>
+    <rendeles megrido="2015-09-24" id="6835">
+        <kiszido>2002-09-24</kiszido>
+        <garido>1 év</garido>
+        <rendalapot>beszállítás alatt</rendalapot>
+    </rendeles>
+    <ugyfel_kosar_kapcsolok>
+        <ugyfel_kosar ugyfelref="7952" kosarref="1253"/>
+        <ugyfel_kosar ugyfelref="7950" kosarref="1250"/>
+    </ugyfel_kosar_kapcsolok>
+    <kosar_rendeles_kapcsolok>
+        <kosar_rendeles kosarref="1253" rendelesref="6834"/>
+        <kosar_rendeles kosarref="1250" rendelesref="6834"/>
+        <kosar_rendeles kosarref="1253" rendelesref="6835"/>
+    </kosar_rendeles_kapcsolok>
+    <termek_kosar_kapcsolok>
+        <termek_kosar termekref="5263" kosarref="1250"></termek_kosar>
+        <termek_kosar termekref="5260" kosarref="1250"></termek_kosar>
+        <termek_kosar termekref="5263" kosarref="1253"></termek_kosar>   
+        </termek_kosar_kapcsolok>
+</shopadatbazis>

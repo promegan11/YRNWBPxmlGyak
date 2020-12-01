@@ -3,10 +3,31 @@
     <xs:element name="shopadatbazis">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="kosar"/>
-                <xs:element ref="termek"/>
-                <xs:element ref="ugyfel"/>
-                <xs:element ref="rendeles"/>
+                <xs:element ref="kosar" maxOccurs="unbounded"/>
+                <xs:element ref="termek" maxOccurs="unbounded"/>
+                <xs:element ref="ugyfel" maxOccurs="unbounded"/>
+                <xs:element ref="rendeles" maxOccurs="unbounded"/>
+                <xs:element name="ugyfel_kosar_kapcsolok">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ugyfel_kosar" type="ugyfel_kosar_kapcsolo" minOccurs="0" maxOccurs="unbounded"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="kosar_rendeles_kapcsolok">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="kosar_rendeles" type="kosar_rendeles_kapcsolo" minOccurs="0" maxOccurs="unbounded"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="termek_kosar_kapcsolok">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="termek_kosar" type="termek_kosar_kapcsolo" minOccurs="0" maxOccurs="unbounded"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -54,6 +75,7 @@
             <xs:attribute name="id" type="azon" use="required"/>
         </xs:complexType>
     </xs:element>
+   
     <!-- alap elemeim -->
     <xs:element name="tel" type="xs:integer"/>
     <xs:element name="email" type="xs:string"/>
@@ -63,7 +85,7 @@
     <xs:element name="garido" type="xs:string"/>
     <xs:element name="nev" type="xs:string"/>
     <xs:element name="termekdarab" type="xs:integer"/>
-    <xs:element name="szallitasiido" type="xs:integer"/>
+    <xs:element name="szallitasiido" type="xs:string"/>
     <xs:element name="adatok" type="xs:string"/>
     <xs:element name="ar" type="xs:integer"/>
     <xs:element name="raktkeszlet" type="xs:integer"/>
@@ -88,7 +110,7 @@
     </xs:simpleType>
     <xs:simpleType name="azon">
         <xs:restriction base="xs:string">
-            <xs:pattern value="\d{8}"/>
+            <xs:pattern value="\d{4}"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType final="restriction" name="rendalapot">
@@ -98,4 +120,19 @@
             <xs:enumeration value="kézbesítve"/>
         </xs:restriction>
     </xs:simpleType>
+    <!-- Kapcsolatok -->
+    <xs:complexType name="ugyfel_kosar_kapcsolo">
+        <xs:attribute name="ugyfelref" type="xs:integer" use="required"></xs:attribute>
+        <xs:attribute name="kosarref" type="xs:integer" use="required"></xs:attribute>
+    </xs:complexType>
+    
+    <xs:complexType name="kosar_rendeles_kapcsolo">
+        <xs:attribute name="kosarref" type="xs:integer" use="required"></xs:attribute>
+        <xs:attribute name="rendelesref" type="xs:integer" use="required"></xs:attribute>
+    </xs:complexType>
+    
+    <xs:complexType name="termek_kosar_kapcsolo">
+        <xs:attribute name="termekref" type="xs:integer" use="required"></xs:attribute>
+        <xs:attribute name="kosarref" type="xs:integer" use="required"></xs:attribute>
+    </xs:complexType>
 </xs:schema>
