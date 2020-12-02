@@ -10,7 +10,7 @@ import org.w3c.dom.*;
 import org.w3c.dom.traversal.*;
 import org.xml.sax.*;
 
-public class DOMReadYRNWBP {
+public class DOMModifyYRNWBP {
 
 			public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException,
 		    XPathExpressionException, DOMException, ParseException {

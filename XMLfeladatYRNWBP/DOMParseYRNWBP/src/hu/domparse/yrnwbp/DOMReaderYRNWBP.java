@@ -7,7 +7,7 @@ import org.w3c.dom.*;
 import org.w3c.dom.traversal.*;
 import org.xml.sax.*;
 
-public class DOMParseYRNWBP {
+public class DOMReaderYRNWBP {
 
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 		File xml = new File("src\\hu\\domparse\\yrnwbp\\XMLyrnwbp.xml");
