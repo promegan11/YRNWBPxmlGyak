@@ -76,10 +76,8 @@
         <kosar_rendeles kosarref="1253" rendelesref="6835"/>
     </kosar_rendeles_kapcsolok>
     <termek_kosar_kapcsolok>
-        <termek_kosar termekref="5263" kosarref="1253"></termek_kosar>
-        <termek_kosar termekref="5260" kosarref="1253"></termek_kosar>
         <termek_kosar termekref="5263" kosarref="1250"></termek_kosar>
-        <termek_kosar termekref="5262" kosarref="1250"></termek_kosar>
-        <termek_kosar termekref="5262" kosarref="1250"></termek_kosar>
+        <termek_kosar termekref="5260" kosarref="1250"></termek_kosar>
+        <termek_kosar termekref="5263" kosarref="1253"></termek_kosar>   
         </termek_kosar_kapcsolok>
 </shopadatbazis>
