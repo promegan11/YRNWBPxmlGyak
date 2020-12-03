@@ -4,11 +4,18 @@ import java.io.*;
 import java.text.ParseException;
 
 import javax.xml.parsers.*;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.*;
 
 import org.w3c.dom.*;
 import org.w3c.dom.traversal.*;
 import org.xml.sax.*;
+
 
 public class DOMModifyYRNWBP {
 
@@ -16,6 +23,7 @@ public class DOMModifyYRNWBP {
 		    XPathExpressionException, DOMException, ParseException {
 				
 				File xml = new File("src\\hu\\domparse\\yrnwbp\\XMLyrnwbp.xml");
+				//StreamResult result = new StreamResult(new File("src\\\\hu\\\\domparse\\\\yrnwbp\\\\XMLyrnwbp.xml"));
 				
 		        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		        DocumentBuilder builder = factory.newDocumentBuilder();
@@ -33,7 +41,10 @@ public class DOMModifyYRNWBP {
 
 		        //DOM bejárása
 		        DomTraverser.traverseLevel(walker, "");
+		        
+		        
 
+		        System.out.println("Done");
 			}
 			
 		    private static class DomModifier {
@@ -56,6 +67,22 @@ public class DOMModifyYRNWBP {
 		                double price = Double.parseDouble(termek.getTextContent());
 		                termek.setTextContent(Double.toString(price * 0.75));
 		            }
+		            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+		            Transformer transformer;
+					try {
+						transformer = transformerFactory.newTransformer();
+						DOMSource source = new DOMSource(document);
+			            StreamResult result = new StreamResult(new File("src\\\\hu\\\\domparse\\\\yrnwbp\\\\XMLyrnwbp.xml"));
+			            transformer.transform(source, result);
+					} catch (TransformerConfigurationException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (TransformerException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+		            
+		            
 		        }
 		    }
 
