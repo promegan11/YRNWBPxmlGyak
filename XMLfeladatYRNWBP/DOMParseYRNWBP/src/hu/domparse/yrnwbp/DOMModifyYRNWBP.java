@@ -56,7 +56,7 @@ public class DOMModifyYRNWBP {
 		            Node owner = (Node) xpath.evaluate("//ugyfel[./nev='Kiss Elemér']/tel",
 		                    document, XPathConstants.NODE);
 
-		            owner.setTextContent("06706397628");
+		            owner.setTextContent("06706311628");
 
 		            // 2.) Minden raktáron olyan termék 25% kedvezmény aminek a raktár készlete nagyobb 5 darabbnál
 		            NodeList termekek = (NodeList) xpath.evaluate("//termek[./raktkeszlet>5]/ar", document, XPathConstants.NODESET);
@@ -65,7 +65,7 @@ public class DOMModifyYRNWBP {
 		                Node termek = termekek.item(i);
 
 		                double price = Double.parseDouble(termek.getTextContent());
-		                termek.setTextContent(Double.toString(price * 0.75));
+		                termek.setTextContent(Double.toString(price * 0.80));
 		            }
 		            TransformerFactory transformerFactory = TransformerFactory.newInstance();
 		            Transformer transformer;
