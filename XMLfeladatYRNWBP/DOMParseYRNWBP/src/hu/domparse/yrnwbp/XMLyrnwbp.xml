@@ -1,20 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="XMLSchemaYrnwbp.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
-<shopadatbazis>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-model href="XMLSchemaYrnwbp.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?><shopadatbazis>
     
-    <kosar id="1253" >
+    <kosar id="1253">
         <tel>06306358468</tel>
         <termekdarab>2</termekdarab>
         <szallitasiido>1-3 munkanap</szallitasiido>
     </kosar>
-    <kosar id="1250" >
+    <kosar id="1250">
         <tel>06706358468</tel>
         <termekdarab>2</termekdarab>
         <szallitasiido>1-3 munkanap</szallitasiido>
     </kosar>
     <termek id="5263">
         <nev>AMD Ryzen 3 3100 100000284BOX processzor</nev>
-        <ar>25000</ar>
+        <ar>11250.0</ar>
         <raktkeszlet>10</raktkeszlet>
         <adatok>Fogyasztás (W): 65</adatok>
     </termek>
@@ -26,20 +24,20 @@
     </termek>
     <termek id="5262">
         <nev>Seagate 2TB BarraCuda 256MB ST2000DM008 merevlemez</nev>
-        <ar>19000</ar>
+        <ar>8550.0</ar>
         <raktkeszlet>10</raktkeszlet>
         <adatok>Belső cache (MB): 256</adatok>
     </termek>
     <termek id="5260">
         <nev>Samsung 500GB 970 Evo Plus MZ-V7S500BW M.2 SSD meghajtó</nev>
-        <ar>35000</ar>
+        <ar>15750.0</ar>
         <raktkeszlet>10</raktkeszlet>
         <adatok>Formátum: M.2 PCIe</adatok>
     </termek>
     <ugyfel id="7952">
         <nev>Kiss Elemér</nev>
-        <tel>06306358468</tel>
-        <email></email>
+        <tel>06706311628</tel>
+        <email/>
         <cim irszam="3142">
             <varos>Sopron</varos>
             <utca>TóthJenő</utca>
@@ -56,19 +54,19 @@
             <hsz>35</hsz>
         </cim>
     </ugyfel>
-    <rendeles megrido="2012-09-24" id="6834">
+    <rendeles id="6834" megrido="2012-09-24">
         <kiszido>2002-09-24</kiszido>
         <garido>2</garido>
         <rendalapot>kiszállítás alatt</rendalapot>
     </rendeles>
-    <rendeles megrido="2015-09-24" id="6835">
+    <rendeles id="6835" megrido="2015-09-24">
         <kiszido>2002-09-24</kiszido>
         <garido>1 év</garido>
         <rendalapot>beszállítás alatt</rendalapot>
     </rendeles>
     <ugyfel_kosar_kapcsolok>
-        <ugyfel_kosar ugyfelref="7952" kosarref="1253"/>
-        <ugyfel_kosar ugyfelref="7950" kosarref="1250"/>
+        <ugyfel_kosar kosarref="1253" ugyfelref="7952"/>
+        <ugyfel_kosar kosarref="1250" ugyfelref="7950"/>
     </ugyfel_kosar_kapcsolok>
     <kosar_rendeles_kapcsolok>
         <kosar_rendeles kosarref="1253" rendelesref="6834"/>
@@ -76,8 +74,8 @@
         <kosar_rendeles kosarref="1253" rendelesref="6835"/>
     </kosar_rendeles_kapcsolok>
     <termek_kosar_kapcsolok>
-        <termek_kosar termekref="5263" kosarref="1250"></termek_kosar>
-        <termek_kosar termekref="5260" kosarref="1250"></termek_kosar>
-        <termek_kosar termekref="5263" kosarref="1253"></termek_kosar>   
+        <termek_kosar kosarref="1250" termekref="5263"/>
+        <termek_kosar kosarref="1250" termekref="5260"/>
+        <termek_kosar kosarref="1253" termekref="5263"/>   
         </termek_kosar_kapcsolok>
 </shopadatbazis>
